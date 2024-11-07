@@ -1,0 +1,130 @@
+// COLOR VARIABLES
+$color-white: #ffffff;
+$color-light: #f4f4f4;
+$color-grey: #616161;
+$color-dark: rgb(25, 25, 36);
+$color-black: #212121;
+$color-yellow: #FFDE03;
+$color-blue: #0336FF;
+$color-pink: #FF0266;
+$color-orange: #FF6D00;
+$color-green: #00BFA5;
+$color-purple: #AA00FF;
+
+
+$font-primary: 'Ubuntu', sans-serif;
+
+// MIXINS
+@mixin flex($direction, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+///////////////////// BUTTONS /////////////////////
+@mixin btn-ghost($color) {
+  &:hover {
+    color: $color-white;
+    border: .15rem $color solid;
+    background-color: $color;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    i {
+      color: $color-white;
+      background-color: $color;
+      transition: all .3s ease;
+    }
+  }
+}
+
+@mixin btn-selected($color) {
+  color: $color-white;
+  border: .15rem $color solid;
+  background-color: $color;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  border: .15rem $color-grey solid;
+  border-radius: 6px;
+  color: $color-grey;
+}
+
+.btn-blue {
+  @include btn-ghost($color-blue);
+  &.selected {
+    @include btn-selected($color-blue);
+  }
+}
+
+.btn-yellow {
+  @include btn-ghost($color-yellow);
+  &.selected {
+    @include btn-selected($color-yellow);
+  }
+}
+
+.btn-green {
+  @include btn-ghost($color-green);
+  &.selected {
+    @include btn-selected($color-green);
+  }
+}
+
+.btn-pink {
+  @include btn-ghost($color-pink);
+  &.selected {
+    @include btn-selected($color-pink);
+  }
+}
+
+.btn-orange {
+  @include btn-ghost($color-orange);
+  &.selected {
+    @include btn-selected($color-orange);
+  }
+}
+
+.btn-purple {
+  @include btn-ghost($color-purple);
+  &.selected {
+    @include btn-selected($color-purple);
+  }
+}
+
+//////////// ICONS ////////////
+@mixin icon-circle($color) {
+  color: $color;
+  .material-icons {
+    font-size: 1.8rem;
+    padding: .3rem;
+    border: .2rem solid $color;
+    border-radius: 50%;
+  }
+}
+
+.icon-hotel {
+  @include icon-circle($color-yellow);
+}
+
+.icon-see {
+  @include icon-circle($color-blue)
+}
+
+.icon-mall {
+  @include icon-circle($color-green)
+}
+
+.icon-dining {
+  @include icon-circle($color-orange)
+}
+
+.icon-cafe {
+  @include icon-circle($color-purple)
+}
+
+.icon-bar {
+  @include icon-circle($color-pink)
+}
